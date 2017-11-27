@@ -1,5 +1,6 @@
 package com.lierl.springsource.test;
 
+import com.lierl.springsource.aop.AspceJAdvice;
 import com.lierl.springsource.controller.UserController;
 import com.lierl.springsource.service.UserService;
 import org.junit.Test;
@@ -20,8 +21,9 @@ public class FirstLoadSpringXmlTest {
         ApplicationContext contest = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserService userService = (UserService) contest.getBean("userService");
         userService.first("hello world!!!");
-        UserController userController = (UserController) contest.getBean("userController");
-        userController.query();
-        logger.info("test--------");
+//        UserController userController = (UserController) contest.getBean("userController");
+//        userController.query();
+        AspceJAdvice advice = (AspceJAdvice) contest.getBean("aspectJAdvice");
+        logger.info("test--------" + advice);
     }
 }

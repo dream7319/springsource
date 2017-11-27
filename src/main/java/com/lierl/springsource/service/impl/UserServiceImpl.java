@@ -8,7 +8,8 @@ import com.lierl.springsource.service.UserService;
  */
 public class UserServiceImpl implements UserService{
     @Override
-    public void first(String name) {
+    public String first(String name) {
         System.out.println("hello world!!!");
+        return name;
     }
 }

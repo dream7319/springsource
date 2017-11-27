@@ -5,5 +5,5 @@ package com.lierl.springsource.service;
  * 2017/11/26 9:48.
  */
 public interface UserService {
-    void first(String name);
+    String first(String name);
 }
