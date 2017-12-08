@@ -3,20 +3,57 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
     <bean id="userService" class="com.lierl.springsource.service.impl.UserServiceImpl"/>
-    <!--<context:component-scan base-package="com.lierl.springsource"/>-->
-
-    <bean id="aspectJAdvice" class="com.lierl.springsource.aop.AspceJAdvice"/>
+    <context:component-scan base-package="com.lierl.springsource"/>
+    <mvc:annotation-driven/>
+    <!--<bean id="aspectJAdvice" class="com.lierl.springsource.aop.AspceJAdvice"/>-->
     <aop:aspectj-autoproxy/>
 
+    <!-- 配置事务管理器 -->
+    <!--<bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        &lt;!&ndash;<property name="sessionFactory" ref="sessionFactory"></property>&ndash;&gt;
+    </bean>-->
+
+    <!-- 拦截器方式配置事物 -->
+     <!--<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="add*" rollback-for="java.lang.Exception"/>
+            <tx:method name="save*" rollback-for="java.lang.Exception"/>
+            <tx:method name="update*" rollback-for="java.lang.Exception"/>
+            <tx:method name="modify*" rollback-for="java.lang.Exception"/>
+            <tx:method name="edit*" rollback-for="java.lang.Exception"/>
+            <tx:method name="delete*" propagation="SUPPORTS" rollback-for="java.lang.Exception"/>
+            <tx:method name="remove*" rollback-for="java.lang.Exception"/>
+            <tx:method name="repair" rollback-for="java.lang.Exception"/>
+            <tx:method name="deleteAndRepair" propagation="SUPPORTS" rollback-for="java.lang.Exception"/>
+            <tx:method name="check*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="count*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+
+            <tx:method name="get*" propagation="SUPPORTS" rollback-for="java.lang.Exception"/>
+            <tx:method name="find*" propagation="SUPPORTS" rollback-for="java.lang.Exception"/>
+            <tx:method name="load*" propagation="SUPPORTS" rollback-for="java.lang.Exception"/>
+            <tx:method name="search*" propagation="SUPPORTS" rollback-for="java.lang.Exception"/>
+            <tx:method name="datagrid*" propagation="SUPPORTS" rollback-for="java.lang.Exception"/>
+
+            <tx:method name="*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+        </tx:attributes>
+    </tx:advice>-->
+
     <!--自定义切面-->
-    <!--<bean id="aopInterceptor" class="com.lierl.springsource.aop.AopInterceptor"/>
+    <!--<bean id="aopInterceptor" class="com.lierl.springsource.aop.AopInterceptor" />
     <aop:config>
         <aop:aspect id="aop" ref="aopInterceptor">
             <aop:pointcut id="cut" expression="execution(* com.lierl.springsource.service.impl.UserServiceImpl.*(..))" />

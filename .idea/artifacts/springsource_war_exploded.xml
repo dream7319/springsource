@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="springsource:war exploded">
-    <output-path>$PROJECT_DIR$/target/springsource</output-path>
+    <output-path>$PROJECT_DIR$/target/springsource-1.0-RELEASE</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -14,7 +14,13 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.12.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.12.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.12.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.12.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.12.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.6.8" />
+          <element id="library" level="project" name="Maven: cglib:cglib:2.2.2" />
+          <element id="library" level="project" name="Maven: asm:asm:3.3.1" />
           <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.5.8" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.5.8" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.5.8" />
@@ -22,7 +28,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/springsource/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/springsource-1.0-RELEASE/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="springsource/web/Web" />
     </root>

@@ -14,6 +14,7 @@ public class AopInterceptor {
 		System.out.println(" 此处意在执行核心业务逻辑前，做一些安全性的判断等等");
 		System.out.println(" 可通过joinPoint来获取所需要的内容");
 		System.out.println("-----End of doBefore()------");
+		System.out.println("********************************************************************");
 	}
 
 	public Object doAround(ProceedingJoinPoint pjp){
@@ -28,6 +29,7 @@ public class AopInterceptor {
 		}
 		System.out.println(" 此处可以做类似于After Advice的事情");
 		System.out.println("-----End of aroundAdvice()------");
+		System.out.println("********************************************************************");
 		return retVal;
 	}
 
@@ -36,6 +38,7 @@ public class AopInterceptor {
 		System.out.println(" 此处意在执行核心业务逻辑之后，做一些日志记录操作等等");
 		System.out.println(" 可通过joinPoint来获取所需要的内容");
 		System.out.println("-----End of afterAdvice()------");
+		System.out.println("********************************************************************");
 	}
 
 	public void doAfterReturning(JoinPoint joinPoint){
@@ -43,6 +46,7 @@ public class AopInterceptor {
 		System.out.println(" 此处可以对返回值做进一步处理");
 		System.out.println(" 可通过joinPoint来获取所需要的内容");
 		System.out.println("-----End of afterReturningAdvice()------");
+		System.out.println("********************************************************************");
 	}
 
 	public void doAfterThrowing(JoinPoint joinPoint, Exception ex){
@@ -51,5 +55,6 @@ public class AopInterceptor {
 		System.out.println(" 此处意在执行核心业务逻辑出错时，捕获异常，并可做一些日志记录操作等等");
 		System.out.println(" 可通过joinPoint来获取所需要的内容");
 		System.out.println("-----End of afterThrowingAdvice()------");
+		System.out.println("********************************************************************");
 	}
 }
